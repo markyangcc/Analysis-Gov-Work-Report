@@ -14,6 +14,12 @@
 
 ![](https://gitee.com/gsyang/Image-Hosting/raw/master/img/scrape_gov_report_example.png)
 
+
+### 如果没有安装 bs4 库，使用下列命令安装
+```
+pip install beautifulsoup4
+```
+
 ## 二、利用jieba Lib 进行简单的词频分析
 
 已经将政府工作报告的内容爬了下来，接下来利用中文分词库对报告进行词频分析，获得出现次数最高的词
