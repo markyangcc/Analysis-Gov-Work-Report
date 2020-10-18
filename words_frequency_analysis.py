@@ -35,7 +35,7 @@ if __name__ == '__main__':
     counter = WordCounter()
 
     # 遍历文件夹为爬去下来的每个文件生成一份词频统计报告
-    g = os.walk(r'/home/mark/Documents/Code-insider/Python/reports')
+    g = os.walk(r'./reports')
 
     for path, dicrt, files in g:
         for file_name in files:

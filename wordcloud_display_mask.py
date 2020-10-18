@@ -1,6 +1,13 @@
 import jieba
 import wordcloud
 from matplotlib.pyplot import imread
+import os
+
+# 创建文件夹存储报告
+current_directory = os.getcwd()
+final_directory = os.path.join(current_directory, r'wordcloudpics')
+if not os.path.exists(final_directory):
+    os.makedirs(final_directory)
 
 
 for year in range(2014, 2020+1):
@@ -31,4 +38,7 @@ for year in range(2014, 2020+1):
         stopwords=excludes  # 被排除的词列表
     )
     w.generate(txt)
-    w.to_file(f"{year}政府工作报告词云.png")
+
+    
+    # 生成图片写入文件夹内
+    w.to_file(f"{final_directory}/{year}政府工作报告词云.png")
