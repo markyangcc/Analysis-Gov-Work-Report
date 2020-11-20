@@ -15,8 +15,6 @@
 运行后，会在相同目录下生成一个 reports 文件夹，里面存放着爬去的政府工作报告
 
 ![](https://gitee.com/gsyang/Image-Hosting/raw/master/img/scrape_gov_report_example.png)
-
-
 ### 如果没有安装 bs4 库，使用下列命令安装
 ```
 pip install beautifulsoup4
@@ -30,7 +28,6 @@ pip install beautifulsoup4
 运行后，会在相同目录下生成一个 2014-2020_reports_analysis.txt 文件，里面写入了历年政府工作报告的词频分析结果
 
 ![](https://gitee.com/gsyang/Image-Hosting/raw/master/img/gov_report_wordcount_example.png)
-
 ### 如果没有安装 jieba 库，使用下列命令安装
 
 ```
@@ -53,7 +50,6 @@ pip install jieba -i https://mirrors.aliyun.com/pypi/simple
 运行后，会在相同目录下生成一个 wordcloudpics 文件夹，里面存放着历年的词云图片
 
 ![](https://gitee.com/gsyang/Image-Hosting/raw/master/img/wordcloudpics_gov_report_example.png)
-
 ### 如果没有安装 wordcloud库，使用下列命令安装
 ```
 pip install wordcloud
