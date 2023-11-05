@@ -45,7 +45,7 @@ if __name__ == '__main__':
             result = counter.count_from_file(full_path, top_limit=10)
 
             # 将分析报告写入 .txt 文件中
-            output_file = '2014-2020_reports_analysis.txt'
+            output_file = 'gov_work_reports_analysis.txt'
             with open(output_file, "a") as f:
                 f.write(str(file_name) + '统计：'+'\n\n')
             for i, j in result:

@@ -6,27 +6,30 @@
 如果是Windows平台，字体路径需要手动更改，指定宋体或者黑体等能够显示完整中文的即可。
 
 ## 一、抓去gov.cn上政府工作报告网页内容
-首先要做的就是把政府工作报告爬下来
+首先要做的就是把政府工作报告爬下来,
 
-参照 scrape.py
-
-运行后，会在相同目录下生成一个 reports 文件夹，里面存放着爬去的政府工作报告
-
-![](https://gitee.com/gsyang/Image-Hosting/raw/master/img/scrape_gov_report_example.png)
-### 如果没有安装 bs4 库，使用下列命令安装
 ```
+python3 scrape.py
+```
+
+运行后，会在当前目录下生成一个 reports 文件夹，里面存放着爬取的政府工作报告
+
+如果没有安装 bs4 库，使用下列命令安装,
+```
+pip install lxml
 pip install beautifulsoup4
 ```
 
 ## 二、利用jieba Lib 进行简单的词频分析
 
 已经将政府工作报告的内容爬了下来，接下来利用中文分词库对报告进行词频分析，获得出现次数最高的词
-参照 words_frequency_analysis.py
+```
+python3  words_frequency_analysis.py
+```
 
-运行后，会在相同目录下生成一个 2014-2020_reports_analysis.txt 文件，里面写入了历年政府工作报告的词频分析结果
+运行后，会在相同目录下生成一个 gov_work_reports_analysis.txt 文件，里面写入了历年政府工作报告的词频分析结果
 
-![](https://gitee.com/gsyang/Image-Hosting/raw/master/img/gov_report_wordcount_example.png)
-### 如果没有安装 jieba 库，使用下列命令安装
+注：如果没有安装 jieba 库，使用下列命令安装
 
 ```
 pip install jieba
@@ -47,8 +50,7 @@ pip install jieba -i https://mirrors.aliyun.com/pypi/simple
 
 运行后，会在相同目录下生成一个 wordcloudpics 文件夹，里面存放着历年的词云图片
 
-![](https://gitee.com/gsyang/Image-Hosting/raw/master/img/wordcloudpics_gov_report_example.png)
-### 如果没有安装 wordcloud库，使用下列命令安装
+注：如果没有安装 wordcloud库，使用下列命令安装
 ```
 pip install wordcloud
 ```
