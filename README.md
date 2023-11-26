@@ -5,7 +5,7 @@
 
 如果是Windows平台，字体路径需要手动更改，指定宋体或者黑体等能够显示完整中文的即可。
 
-## 一、抓去gov.cn上政府工作报告网页内容
+## 一、抓取 gov.cn上政府工作报告网页内容
 首先要做的就是把政府工作报告爬下来,
 
 ```
@@ -19,8 +19,13 @@ python3 scrape.py
 pip install lxml
 pip install beautifulsoup4
 ```
+如果从国外拉取资源失败，那么就从国内镜像源拉，比如从阿里云镜像拉,
 
-## 二、利用jieba Lib 进行简单的词频分析
+```shell
+pip install lxml -i https://mirrors.aliyun.com/pypi/simple
+pip install beautifulsoup4 -i https://mirrors.aliyun.com/pypi/simple
+```
+## 二、利用 jieba Lib 进行简单的词频分析
 
 已经将政府工作报告的内容爬了下来，接下来利用中文分词库对报告进行词频分析，获得出现次数最高的词
 ```
@@ -55,7 +60,7 @@ pip install jieba -i https://mirrors.aliyun.com/pypi/simple
 pip install wordcloud
 ```
 
-如果从国外拉速度太慢，就从国内镜像拉,例如
+如果从国外拉速度太慢，就从国内镜像拉, 例如
 
 ```
 pip install wordcloud -i https://mirrors.aliyun.com/pypi/simple
