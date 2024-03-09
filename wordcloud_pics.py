@@ -10,7 +10,7 @@ if not os.path.exists(final_directory):
     os.makedirs(final_directory)
 
 
-for year in range(2014, 2020+1):
+for year in range(2014, 2023+1):
 
     mask = imread("China.jpg")
     f = open(f"./reports/{year}_gov_report.txt", "r", encoding="utf-8")
