@@ -15,9 +15,8 @@ for year in range(2014, 2020+1):
     mask = imread("China.jpg")
     f = open(f"./reports/{year}_gov_report.txt", "r", encoding="utf-8")
 
-    # 忽略掉不符合的词
-    excludes = {"div", "h5", "class", "h4", "h3",
-                "h2", "h1", "conlun2_box_text", "p", "id", "span"}
+    # 忽略掉不符合的语气词，连接词
+    excludes = {"和","的","要","是","在"}
 
     t = f.read()
     f.close()
@@ -25,7 +24,15 @@ for year in range(2014, 2020+1):
     txt = " ".join(ls)  # 利用空格连接精确分词后的词语
 
     # 设置字体,否则汉字会变为全是方框框，显示不出来
-    font = '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc'
+    # 分别选择了 Ubuntu/Windows/MacOS 的一种字体
+    fonts = [
+        '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
+        'C:/Windows/Fonts/simhei.ttf',
+        '/System/Library/fonts/PingFang.ttc'
+    ]
+
+    # 如果所有路径都不存在，`font` 将会是 `None`
+    font = next((path for path in fonts if os.path.exists(path)), None)
 
     w = wordcloud.WordCloud(
         width=1000,  # 设置图片宽度
